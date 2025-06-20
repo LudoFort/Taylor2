@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Énigme #3</title>
+  <meta charset="UTF-8" />
+  <title>Accueil - Jeu de Piste</title>
   <style>
     body {
       background-color: #0e0e0e;
@@ -15,49 +15,20 @@
       height: 100vh;
       padding: 20px;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    input {
-      padding: 10px;
-      font-size: 1em;
-      width: 250px;
-      margin-bottom: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #444;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #result {
+    a {
       margin-top: 20px;
-      white-space: pre-wrap;
-      font-size: 1.1em;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .esoteric-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 20px;
+      padding: 12px 24px;
       background: linear-gradient(135deg, #1f1f1f, #4b0082);
       color: #fff;
       text-decoration: none;
       font-family: 'Courier New', monospace;
-      font-size: 16px;
+      font-size: 18px;
       border: 2px solid #fff;
       border-radius: 12px;
       transition: all 0.3s ease;
       box-shadow: 0 0 10px rgba(75, 0, 130, 0.8);
     }
-
-    .esoteric-button:hover {
+    a:hover {
       background: #4b0082;
       color: #ffd700;
       box-shadow: 0 0 15px #ffd700;
@@ -66,35 +37,8 @@
   </style>
 </head>
 <body>
-  <h1>Énigme 3 — Le Son Qui Inverse Les Vivants</h1>
-  <input type="text" id="input" placeholder="Entrez les mots-clés">
-  <button onclick="checkAnswer()">Valider</button>
-  <div id="result"></div>
-
-  <!-- 🔮 Bouton ésotérique vers YouTube -->
-  <a href="https://www.youtube.com/watch?v=n7QZNZx2QKA&list=RDn7QZNZx2QKA&start_radio=1" target="_blank" class="esoteric-button">
-    &#9765;
-  </a>
-
-  <script>
-    function checkAnswer() {
-      const input = document.getElementById("input").value.trim().toLowerCase();
-      const result = document.getElementById("result");
-      if (input === "turn me on dead man") {
-        result.textContent = `"Turn me on, dead man."
-
-Mais il ne s’appelait pas Paul, ici.
-Et pourtant, il est mort lui aussi.
-Effacé des listes. Rayé des murs.
-
-Tu le croiseras peut-être.
-Si tu trouves
-la porte sans poignée, celle qui ne mène nulle part.
-Salle 0.`;
-      } else {
-        result.textContent = "Ce n'est pas la bonne réponse. Réessaie.";
-      }
-    }
-  </script>
+  <h1>Bienvenue au Jeu de Piste</h1>
+  <!-- Lien interne avec chemin absolu vers énigme3 -->
+  <a href="/Taylor2/enigme3.html">Accéder à l'Énigme 3</a>
 </body>
 </html>
