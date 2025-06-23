@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Énigme #3</title>
   <style>
     body {
@@ -25,6 +25,10 @@
       font-size: 1em;
       width: 250px;
       margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #555;
+      background: #222;
+      color: #eee;
     }
     button {
       padding: 10px 20px;
@@ -34,30 +38,34 @@
       border: none;
       cursor: pointer;
       margin: 10px 0;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #666;
     }
     #result {
       margin-top: 20px;
       white-space: pre-wrap;
       font-size: 1.1em;
       max-width: 600px;
+      line-height: 1.4em;
     }
-
-    @media (max-width: 600px) {
-      /* iframe n’existe plus, donc pas nécessaire ici */
+    audio {
+      margin-top: 20px;
+      outline: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #444;
     }
   </style>
 </head>
 <body>
-  <h1>Énigme 3 — Le Son Qui Inverse Les Vivants</h1>
+  <h1>Le son qui réveille les morts</h1>
 
-  <input type="text" id="input" placeholder="Entrez les mots-clés">
+  <input type="text" id="input" placeholder="Entrez la réponse" />
   <button onclick="checkAnswer()">Valider</button>
 
-  <p>Ou bien écoute directement ce que tu n’as jamais entendu…</p>
-
-  <!-- Balise audio avec autoplay et muted -->
-  <audio autoplay muted>
-    <source src="ton-audio.mp3" type="audio/mpeg">
+  <audio controls>
+    <source src="son.mp3" type="audio/mpeg" />
     Votre navigateur ne supporte pas la balise audio.
   </audio>
 
@@ -65,8 +73,18 @@
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("input").value;
-      // Ton code de vérification ici (non fourni)
+      const answer = document.getElementById('input').value.trim().toLowerCase();
+
+      // La bonne réponse, en minuscule, sans espaces en trop
+      const correctAnswer = "turn me on dead man";
+
+      const result = document.getElementById('result');
+
+      if (answer === correctAnswer) {
+        result.textContent = `“Turn me on, dead man.”\nMais il ne s’appelait pas Paul, ici.\nEt pourtant, il est mort lui aussi.\nEffacé des listes. Rayé des murs.\nTu le croiseras peut-être.\nSi tu trouves\nla porte sans poignée, celle qui ne mène nulle part.\nSalle 0.`;
+      } else {
+        result.textContent = "Réponse incorrecte, essaye encore.";
+      }
     }
   </script>
 </body>
